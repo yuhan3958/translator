@@ -1,12 +1,7 @@
-document.getElementById("naverid").addEventListener("click", (event) => {
-    location.href = "https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=d38d7PSWS1ORhJ8PiwvJ&state=tocken&redirect_uri=https%3a%2f%2fpapago1.netlify.app%2floginok"
-  });
-
-setCookie: (cookie_name, value, miuntes) => {
-    const exdate = new Date();
-    exdate.setMinutes(exdate.getMinutes() + miuntes);
-    const cookie_value = escape(value) + ((miuntes == null) ? '' : '; expires=' + exdate.toUTCString());
-    document.cookie = cookie_name + '=' + cookie_value;
-}
-
-  
+var naver_id_login = new naver_id_login("d38d7PSWS1ORhJ8PiwvJ", "https://papago1.netlify.app/loginok.html");
+  	var state = naver_id_login.getUniqState();
+  	naver_id_login.setButton("white", 2,40);
+  	naver_id_login.setDomain("YOUR_SERVICE_URL");
+  	naver_id_login.setState(state);
+  	naver_id_login.setPopup();
+  	naver_id_login.init_naver_id_login();
