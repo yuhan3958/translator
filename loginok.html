@@ -12,6 +12,26 @@
 
    <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
    <script>
+      import mysql from 'mysql';
+
+// createConnection : 접속하고 싶은 DB정보 입력
+
+      var connection = mysql.createConnection({
+         host: '14.5.232.199',
+         user: 'root',
+         password: 'kr39588954',
+         database:'translator'
+      });
+
+      // DB 연결
+
+      connection.connect();
+
+
+
+
+      // DB 종료
+
       var naverLogin = new naver.LoginWithNaverId(
          {
             clientId: "d38d7PSWS1ORhJ8PiwvJ",
@@ -29,7 +49,7 @@
                var email = naverLogin.user.getEmail();
                var name = naverLogin.user.name;
                var nickname = naverLogin.user.nickname;
-               var a1 = naverLogin.user
+               var phone = naverLogin.user.phone
                if( email == undefined || email == null ) {
                   alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");
                   naverLogin.reprompt();
@@ -43,7 +63,6 @@
                 console.log(`이메일: ${email}`); // 로그인 한 이메일 ***@naver.com 이 출력된다.\
                 console.log(`이름: ${name}`);
                 console.log(`닉네임: ${nickname}`);
-                console.log(a1)
                //window.location.replace("http://127.0.0.1/test2.html");
             } else {
                console.log("callback 처리에 실패하였습니다.");
@@ -52,7 +71,9 @@
             }
          });
       });
+      connection.query(`INSERT INTO user (nickname,name,subscription,email,phone) VALUES('${nickname}','${name}',NOW(),'${email}','${phone}');`);
    </script>
+   <script src="./login_tocken.js"></script>
 </body>
 
 </html>
