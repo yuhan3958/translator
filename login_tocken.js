@@ -1,0 +1,1 @@
+location.href = "https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&client_id=d38d7PSWS1ORhJ8PiwvJ&client_secret=BgXLTyrwI2&code=EIc5bFrl4RibFls1&state=9kgsGTfH4j7IyAkg"
