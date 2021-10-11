@@ -1,19 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>translator</title>
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
-    
+  <meta charset="utf-8">
+  <title>translator</title>
+  <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/mvp.css">
 </head>
 <body>
-    <header>    
+    <header>
         <h1>translator</h1>
-        <button id="naverid" style="background-color: rgb(0, 191, 24); border-color: black;"><img src="./naver-icon-style-1.png" alt="">네이버 아이디로 로그인</button>
+        <!-- 네이버아이디로로그인 버튼 노출 영역 -->
+        <div id="naver_id_login"></div>
+        <!-- //네이버아이디로로그인 버튼 노출 영역 -->
+        <script type="text/javascript">
+            var naver_id_login = new naver_id_login("d38d7PSWS1ORhJ8PiwvJ", "http://127.0.0.1/login");
+            var state = naver_id_login.getUniqState();
+            naver_id_login.setButton("white", 2,40);
+            naver_id_login.setDomain("YOUR_SERVICE_URL");
+            naver_id_login.setState(state);
+            naver_id_login.setPopup();
+            naver_id_login.init_naver_id_login();
+        </script>
     </header>
-    <script src="./App.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-</body>
 </html>
