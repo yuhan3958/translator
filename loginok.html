@@ -27,14 +27,14 @@
 
             if (status) {
                var email = naverLogin.user.getEmail();
-               var nickname = naverLogin
+               var name = naverLogin.user.name;
                if( email == undefined || email == null ) {
                   alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");
                   naverLogin.reprompt();
                   return;
                }
                alert( email ); // 로그인 한 이메일 ***@naver.com 이 출력된다.\
-               console.log( nickname )
+               console.log( name )
                //window.location.replace("http://127.0.0.1/test2.html");
             } else {
                console.log("callback 처리에 실패하였습니다.");
