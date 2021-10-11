@@ -9,21 +9,22 @@
   <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
 </head>
 <body>
-    <header>
-        <h1>translator</h1>
-        <!-- 네이버아이디로로그인 버튼 노출 영역 -->
-        <div id="naver_id_login"></div>
-        <!-- //네이버아이디로로그인 버튼 노출 영역 -->
-        <script type="text/javascript">
-            var naverLogin = new naver.LoginWithNaverId(
-                {
-                    clientId: "d38d7PSWS1ORhJ8PiwvJ",
-                    callbackUrl: "https://papago1.netlify.app/loginok.html",
-                    isPopup: false,
-                    loginButton: {color: "green", type: 3, height: 60}
-                }
-            );
-   naverLogin.init();
-        </script>
-    </header>
+    <div id="naverIdLogin"></div>
+        <header>
+            <h1>translator</h1>
+            <!-- 네이버아이디로로그인 버튼 노출 영역 -->
+            <div id="naver_id_login"></div>
+            <!-- //네이버아이디로로그인 버튼 노출 영역 -->
+            <script type="text/javascript">
+                var naverLogin = new naver.LoginWithNaverId(
+                    {
+                        clientId: "d38d7PSWS1ORhJ8PiwvJ",
+                        callbackUrl: "https://papago1.netlify.app/loginok.html",
+                        isPopup: false,
+                        loginButton: {color: "green", type: 3, height: 60}
+                    }
+                );
+    naverLogin.init();
+            </script>
+        </header>
 </html>
